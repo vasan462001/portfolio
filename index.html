@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinivasan</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header">
+        <div class="container">
+            <div class="toggle">
+                <i class="fa fa-sun"></i>
+            </div>
+            <div class="header-content">
+                <div class="profile">
+                    <img src="./Passport size photo.jpg" alt="" >
+                </div>
+                <div class="text-content">
+                      <h1>Hi, I am Srinivasan <br><span>Entry Level Software Developer</span></h1>
+                      <p>
+                         I am a Post graduate with a strong foundation in Python programming and a passion
+                         for software development. I have hands-on experience in building projects that demonstrate 
+                         my skills in problem-solving, data manipulation, and web development. I am eager to contribute
+                         to a dynamic team where I can continue to grow and make an impact as a Python developer.
+                      </p>
+                        <a href="./SRINIVASAN S.pdf">
+                            <button class="button">
+                                <span class="text">Download CV</span>
+                                <span class="icon fa fa-arrow-right"></span>
+                            </button>
+                        </a>
+        
+                </div>
+                <div class="navigation"> 
+                    <div class="nav">
+                        <a href="https://github.com/vasan462001" target="_blank">
+                            <i class="fa-brands fa-github active"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/srinivasan-s-093a48235/">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <h1>Contact</h1>
+                <i class="fa-solid fa-phone" class="phone"></i>+91 7871693540 <br><br>
+                <i class="fa-solid fa-envelope" class="mail"></i>  srini452001@gmail.com
+
+            </div>
+            <div class="about">
+                <h1>About me</h1>
+                <p>I am a dedicated and passionate Software Developer with a solid foundation in Computer Science and a strong enthusiasm for coding and problem-solving. 
+                   As a recent graduate, I am eager to leverage my academic knowledge and hands-on project experience to contribute to innovative software solutions</p>
+    
+            </div>
+            <div class="skills">
+                <h1>Techical Skills</h1>
+                <ul type="none" class="unorder">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Python</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        let btn=document.querySelector(".toggle");
+        let icon=document.querySelector(".toggle i");
+        let body=document.querySelector(".hero-header");
+        btn.onclick=function(){
+            body.classList.toggle("light-theme");
+            if(body.classList.contains("light-theme"))
+        {
+            icon.classList.add("fa-moon");
+            icon.classList.remove("fa-sun");
+        }
+        else{
+            icon.classList.add("fa-sun");
+            icon.classList.remove("fa-moon");
+        }
+        }
+
+    </script>
+</body>
+</html>
