@@ -41,7 +41,7 @@ export const TECHNOLOGIES = [
       },
       { 
         name: "Python", 
-        icon: <FaPython size={50} className="text-blue-600 dark:text-blue-500" /> 
+        icon: <FaPython size={50}  /> 
       },
       { 
         name: "React", 
@@ -77,7 +77,7 @@ export const TECHNOLOGIES = [
       },
       { 
         name: "MySQL", 
-        icon: <SiMysql size={50} className="text-blue-600 dark:text-blue-500" /> 
+        icon: <SiMysql size={50}  /> 
       },
  
       { 

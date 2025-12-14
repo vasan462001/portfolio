@@ -27,20 +27,6 @@ export const AppMetadata = {
 		description: description,
 		url: url,
 		siteName: `${author} | Portfolio`,
-		images: [
-			{
-				url: "https://vasile-novatchii.netlify.app/screenshot.webp",
-				width: 800,
-				height: 600,
-				alt: "My personal portfolio website"
-			},
-			{
-				url: "https://vasile-novatchii.netlify.app/screenshot.webp",
-				width: 1800,
-				height: 1600,
-				alt: "My personal portfolio website"
-			}
-		],
 		locale: "en-US",
 		type: "website"
 	}

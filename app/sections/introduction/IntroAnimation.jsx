@@ -13,15 +13,15 @@ export function WelcomeAnimation() {
 	return (
 		<div
 			ref={ref}
-			className="relative w-full h-full min-h-[600px] flex items-center justify-center py-12"
+			className="relative w-full h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center py-4 md:py-8 lg:py-12"
 			style={{
 				transform: isInView ? "none" : "translateX(100px)",
 				opacity: isInView ? 1 : 0,
 				transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1s"
 			}}
 		>
-			{/* Enhanced Background SVG Animation */}
-			<div className="absolute inset-0 z-0 opacity-30">
+			{/* Responsive Background SVG Animation */}
+			<div className="absolute inset-0 z-0 opacity-20 md:opacity-30">
 				<svg
 					className="w-full h-full"
 					viewBox="0 0 602 602"
@@ -126,63 +126,51 @@ export function WelcomeAnimation() {
 				</svg>
 			</div>
 
-			{/* Enhanced Professional Profile Image */}
-			<div className="relative z-10 flex items-center justify-center">
-				<div className="relative group">
-					{/* Outer Glow Effects */}
-					<div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-600 rounded-full blur-3xl scale-110 animate-pulse-slow opacity-60"></div>
-					<div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-2xl scale-105 animate-pulse-medium opacity-40"></div>
+			{/* Responsive Professional Profile Image */}
+			<div className="relative z-10 flex items-center justify-center w-full">
+				<div className="relative group w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[480px] xl:max-w-[520px]">
+				
 					
-					{/* Floating Elements */}
-					<div className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full animate-bounce opacity-80 shadow-lg"></div>
-					<div className="absolute -bottom-6 -left-6 w-6 h-6 bg-green-400 rounded-full animate-bounce opacity-80 shadow-lg" style={{ animationDelay: '1s' }}></div>
-					<div className="absolute top-1/2 -right-12 w-4 h-4 bg-pink-400 rounded-full animate-bounce opacity-80 shadow-lg" style={{ animationDelay: '2s' }}></div>
-					
-					{/* Main Image Container with Enhanced Styling */}
+					{/* Main Image Container */}
 					<div className="relative">
-						
-						{/* Main Image Wrapper */}
-						<div className="relative rounded-full p-3 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm border border-white/30 shadow-2xl">
-							<div className="relative rounded-full overflow-hidden border-8 border-white/90 dark:border-gray-800/90 shadow-2xl w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[480px] lg:h-[480px] xl:w-[520px] xl:h-[520px] group-hover:border-white transition-all duration-500">
+						{/* Main Image Wrapper - Removed rounded corners and background colors */}
+						<div >
+							<div className="relative w-full aspect-square">
 								<Image
-									src="/proflioprofile.jpeg"
+									src="/proflioprofile.png"
 									alt="Srinivasan Saravanan - Professional Software Developer"
 									width={500}
 									height={500}
-									className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700 ease-out"
+									className="w-full h-full object-cover group-hover:scale-105 md:group-hover:scale-110 transition-transform duration-500 md:duration-700 ease-out"
 									priority
-									quality={100}
+									quality={90}
+									sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 380px, (max-width: 1280px) 480px, 520px"
 									placeholder="blur"
 									blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R"
 								/>
 								
 								{/* Overlay Effects */}
-								<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
-								<div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/30 transition-all duration-500 rounded-full"></div>
+								<div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 md:duration-500"></div>
 							</div>
 						</div>
 						
-						{/* Professional Badge */}
-						<div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full shadow-2xl border border-white/20 backdrop-blur-sm">
-							<div className="flex items-center gap-2 text-sm font-semibold whitespace-nowrap">
-								<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+						{/* Professional Badge - Responsive */}
+						<div className="absolute -bottom-2 md:-bottom-3 lg:-bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 md:px-5 md:py-1.5 lg:px-6 lg:py-2 rounded-full shadow-lg md:shadow-xl lg:shadow-2xl border border-white/20 backdrop-blur-sm whitespace-nowrap">
+							<div className="flex items-center gap-1 md:gap-1.5 lg:gap-2 text-xs md:text-sm lg:text-sm font-semibold">
+								<svg className="w-3 h-3 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4" fill="currentColor" viewBox="0 0 20 20">
 									<path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
 								</svg>
-								Software Developer
+								<span className="text-[10px] md:text-xs lg:text-sm">Software Developer</span>
 							</div>
 						</div>
 					</div>
-
-					{/* Hover Effect Rings */}
-					<div className="absolute inset-0 rounded-full border-2 border-blue-300/0 group-hover:border-blue-300/50 group-hover:scale-110 transition-all duration-1000 ease-out"></div>
-					<div className="absolute inset-4 rounded-full border-2 border-purple-300/0 group-hover:border-purple-300/30 group-hover:scale-105 transition-all duration-700 ease-out delay-100"></div>
 				</div>
 			</div>
 
-			{/* Additional Background Elements */}
-			<div className="absolute bottom-10 left-10 w-20 h-20 bg-blue-400/10 rounded-full animate-pulse-slow"></div>
-			<div className="absolute top-10 right-10 w-16 h-16 bg-purple-400/10 rounded-full animate-pulse-medium"></div>
-			<div className="absolute top-1/3 left-1/4 w-12 h-12 bg-indigo-400/10 rounded-full animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
+			{/* Additional Background Elements - Hidden on mobile and tablet */}
+			<div className="hidden lg:block absolute bottom-10 left-10 w-20 h-20 bg-blue-400/10 animate-pulse-slow"></div>
+			<div className="hidden lg:block absolute top-10 right-10 w-16 h-16 bg-purple-400/10 animate-pulse-medium"></div>
+			<div className="hidden lg:block absolute top-1/3 left-1/4 w-12 h-12 bg-indigo-400/10 animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
 		</div>
 	);
 }
