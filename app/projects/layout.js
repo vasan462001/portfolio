@@ -1,15 +1,14 @@
 "use client";
 
-import { HeadingDivider, Loader } from "components";
+import { HeadingDivider, Loader } from "../components";
 import { Suspense, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import useSWR from "swr";
-import { fetcher } from "utils/fetcher";
+import { fetcher } from "../../utils/fetcher";
 import Error from "../error";
 import { Filter } from "./components/Filter";
 import { Projects } from "./components/Projects";
 
-const url = `${process.env.NEXT_PUBLIC_SANITY_URL}${process.env.NEXT_PUBLIC_SANITY_ALL_PROJECTS}`;
 
 export default function Page() {
 	const [category, setCategory] = useState(undefined);
