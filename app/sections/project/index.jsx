@@ -16,38 +16,36 @@ export function ProjectSection() {
 	const projects = [
 		{
 			id: 1,
-			title: "E-Commerce Platform",
+			title: "E-Commerce website",
 			description: "Full-stack e-commerce solution with user authentication, payment integration, and admin dashboard.",
 			technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-			image: "/projects/ecommerce.jpg",
+			image: "/ecommerce.jpg",
 			githubUrl: "https://github.com/yourusername/ecommerce",
 			liveUrl: "https://ecommerce-demo.com",
 			date: "2024",
 			status: "Completed",
 			features: ["User Authentication", "Payment Processing", "Admin Dashboard", "Real-time Updates"],
-			type: "Full Stack",
-			icon: <FaServer className="w-5 h-5" />
 		},
-		{
-			id: 2,
-			title: "Task Management App",
-			description: "Collaborative task management application with drag-and-drop functionality and team features.",
-			technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Prisma"],
-			image: "/projects/taskmanager.jpg",
-			githubUrl: "https://github.com/yourusername/taskmanager",
-			liveUrl: "https://taskmanager-demo.com",
-			date: "2023",
-			status: "Completed",
-			features: ["Drag & Drop", "Team Collaboration", "Real-time Sync", "File Attachments"],
-			type: "Web App",
-			icon: <FaLaptopCode className="w-5 h-5" />
-		},
+		// {
+		// 	id: 2,
+		// 	title: "Task Management App",
+		// 	description: "Collaborative task management application with drag-and-drop functionality and team features.",
+		// 	technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Prisma"],
+		// 	image: "/projects/taskmanager.jpg",
+		// 	githubUrl: "https://github.com/yourusername/taskmanager",
+		// 	liveUrl: "https://taskmanager-demo.com",
+		// 	date: "2023",
+		// 	status: "Completed",
+		// 	features: ["Drag & Drop", "Team Collaboration", "Real-time Sync", "File Attachments"],
+		// 	type: "Web App",
+		// 	icon: <FaLaptopCode className="w-5 h-5" />
+		// },
 		{
 			id: 3,
 			title: "Weather Dashboard",
 			description: "Real-time weather forecasting application with interactive maps and location-based alerts.",
 			technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation API", "PWA"],
-			image: "/projects/weather.jpg",
+			image: "/weather.jpg",
 			githubUrl: "https://github.com/yourusername/weather-dashboard",
 			liveUrl: "https://weather-dashboard.com",
 			date: "2023",
@@ -56,26 +54,26 @@ export function ProjectSection() {
 			type: "Frontend",
 			icon: <FaMobileAlt className="w-5 h-5" />
 		},
-		{
-			id: 4,
-			title: "AI Content Generator",
-			description: "AI-powered content creation tool using GPT-3 for automated blog posts and social media content.",
-			technologies: ["Python", "FastAPI", "OpenAI API", "React", "PostgreSQL"],
-			image: "/projects/ai-content.jpg",
-			githubUrl: "https://github.com/yourusername/ai-content-generator",
-			liveUrl: "https://ai-content-generator.com",
-			date: "2024",
-			status: "In Progress",
-			features: ["AI Integration", "Content Templates", "Export Options", "User Analytics"],
-			type: "AI/ML",
-			icon: <FaCode className="w-5 h-5" />
-		},
+		// {
+		// 	id: 4,
+		// 	title: "AI Content Generator",
+		// 	description: "AI-powered content creation tool using GPT-3 for automated blog posts and social media content.",
+		// 	technologies: ["Python", "FastAPI", "OpenAI API", "React", "PostgreSQL"],
+		// 	image: "/projects/ai-content.jpg",
+		// 	githubUrl: "https://github.com/yourusername/ai-content-generator",
+		// 	liveUrl: "https://ai-content-generator.com",
+		// 	date: "2024",
+		// 	status: "In Progress",
+		// 	features: ["AI Integration", "Content Templates", "Export Options", "User Analytics"],
+		// 	type: "AI/ML",
+		// 	icon: <FaCode className="w-5 h-5" />
+		// },
 		{
 			id: 5,
 			title: "Portfolio Website",
 			description: "Modern portfolio website with dark/light mode, animations, and project showcase.",
 			technologies: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Vercel"],
-			image: "/projects/portfolio.jpg",
+			image: "/protfolio.jpg",
 			githubUrl: "https://github.com/yourusername/portfolio",
 			liveUrl: "https://yourportfolio.com",
 			date: "2024",
@@ -84,20 +82,20 @@ export function ProjectSection() {
 			type: "Frontend",
 			icon: <FaPalette className="w-5 h-5" />
 		},
-		{
-			id: 6,
-			title: "Inventory Management System",
-			description: "Enterprise inventory management system with barcode scanning and reporting features.",
-			technologies: ["Java", "Spring Boot", "MySQL", "React", "REST API"],
-			image: "/projects/inventory.jpg",
-			githubUrl: "https://github.com/yourusername/inventory-system",
-			liveUrl: "https://inventory-demo.com",
-			date: "2023",
-			status: "Completed",
-			features: ["Barcode Scanning", "Reporting", "Multi-user", "Export Features"],
-			type: "Enterprise",
-			icon: <FaDatabase className="w-5 h-5" />
-		}
+		// {
+		// 	id: 6,
+		// 	title: "Inventory Management System",
+		// 	description: "Enterprise inventory management system with barcode scanning and reporting features.",
+		// 	technologies: ["Java", "Spring Boot", "MySQL", "React", "REST API"],
+		// 	image: "/projects/inventory.jpg",
+		// 	githubUrl: "https://github.com/yourusername/inventory-system",
+		// 	liveUrl: "https://inventory-demo.com",
+		// 	date: "2023",
+		// 	status: "Completed",
+		// 	features: ["Barcode Scanning", "Reporting", "Multi-user", "Export Features"],
+		// 	type: "Enterprise",
+		// 	icon: <FaDatabase className="w-5 h-5" />
+		// }
 	];
 
 	return (
@@ -133,7 +131,7 @@ export function ProjectSection() {
 				{/* View More Button */}
 				<div className="text-center mt-12">
 					<a 
-						href="https://github.com/yourusername" 
+						href="https://github.com/vasan462001?tab=repositories" 
 						target="_blank" 
 						rel="noopener noreferrer"
 						className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl shadow-lg"

@@ -30,7 +30,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/sections/education/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
