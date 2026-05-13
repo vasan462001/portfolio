@@ -2,7 +2,7 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 import { animate, exit, initial, transition } from "../utils/motions";
 import { SOCIAL_MEDIA } from "../constants";
 
-export function ConnectMedia() {
+export function 	ConnectMedia() {
 	return (
 		<LazyMotion features={domAnimation}>
 			<m.nav role="menu" initial={initial} animate={animate} exit={exit} transition={transition}>

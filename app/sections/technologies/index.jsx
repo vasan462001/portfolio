@@ -20,7 +20,7 @@ export function TechnologiesSection() {
               {TECHNOLOGIES.map((tech, index) => {
                 return (
                   <div
-                    key={tech.category}
+                    key={index}
                     ref={stackRef}
                     className="flex flex-col gap-8"
                     style={{
@@ -38,10 +38,10 @@ export function TechnologiesSection() {
                     
                     {/* Removed background container - direct flex layout */}
                     <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
-                      {tech.items.map((item) => {
+                      {tech.items.map((item, itemIndex) => {
                         return (
                           <div 
-                            key={item.name} 
+                            key={itemIndex} 
                             className="group relative flex flex-col items-center gap-3 transition-all duration-300"
                           >
                             <div className="p-4 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
