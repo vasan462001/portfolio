@@ -4,52 +4,61 @@ import { useRef } from "react";
 import { TECHNOLOGIES } from "../../../constants";
 
 export function TechnologiesSection() {
-  const textRef = useRef(null);
   const stackRef = useRef(null);
-  const isTextInView = useInView(textRef, { once: true });
-  const isStackInView = useInView(stackRef, { once: true });
+  const isStackInView = useInView(stackRef, { once: true, margin: "-100px" });
 
   return (
     <LazyMotion features={domAnimation}>
       <section id="tech" className="section px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <HeadingDivider title="Technologies" />
         
-        <div className="max-w-10xl mx-auto">
+        <div ref={stackRef} className="max-w-6xl mx-auto">
           {!!TECHNOLOGIES.length && (
-            <div className="mt-12">
+            <div className="mt-12 space-y-16">
               {TECHNOLOGIES.map((tech, index) => {
                 return (
                   <div
                     key={index}
-                    ref={stackRef}
-                    className="flex flex-col gap-8"
                     style={{
-                      transform: isStackInView ? "none" : "translateY(50px)",
+                      transform: isStackInView ? "none" : "translateY(30px)",
                       opacity: isStackInView ? 1 : 0,
-                      transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${0.3 + index * 0.1}s`
+                      transition: `all 0.8s cubic-bezier(0.4,0,0.2,1) ${0.2 + index * 0.1}s`
                     }}
                   >
-                    <h3 
-                      tabIndex="0" 
-                      className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white text-center"
-                    >
-                      {tech.category}
-                    </h3>
+                    {/* Category Title */}
+                    <div className="flex items-center justify-center gap-4 mb-8">
+                      <div className="h-px flex-1 max-w-[100px] bg-gray-200 dark:bg-gray-700"></div>
+                      <h3 
+                        tabIndex="0" 
+                        className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white whitespace-nowrap"
+                      >
+                        {tech.category}
+                      </h3>
+                      <div className="h-px flex-1 max-w-[100px] bg-gray-200 dark:bg-gray-700"></div>
+                    </div>
                     
-                    {/* Removed background container - direct flex layout */}
-                    <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
+                    {/* Tech Grid */}
+                    <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 sm:gap-6">
                       {tech.items.map((item, itemIndex) => {
                         return (
                           <div 
                             key={itemIndex} 
-                            className="group relative flex flex-col items-center gap-3 transition-all duration-300"
+                            className="group flex flex-col items-center"
+                            style={{
+                              transform: isStackInView ? "none" : "scale(0.8)",
+                              opacity: isStackInView ? 1 : 0,
+                              transition: `all 0.5s cubic-bezier(0.4,0,0.2,1) ${0.2 + index * 0.1 + itemIndex * 0.05}s`
+                            }}
                           >
-                            <div className="p-4 rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
-                              {item.icon}
+                            {/* Icon Container */}
+                            <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 mb-3">
+                              <div className="text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200 [&>svg]:w-8 [&>svg]:h-8 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
+                                {item.icon}
+                              </div>
                             </div>
-                            <span
-                              className="group-hover:opacity-100 group-focus-within:opacity-100 transition-all duration-300 bg-gray-800 dark:bg-gray-900 text-sm font-medium text-gray-100 rounded-lg absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 px-3 py-2 w-max z-10 shadow-lg"
-                            >
+                            
+                            {/* Label */}
+                            <span className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 text-center leading-tight group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200">
                               {item.name}
                             </span>
                           </div>

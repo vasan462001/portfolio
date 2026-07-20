@@ -1,141 +1,70 @@
-import { useRef, useState, useEffect } from "react";
+// IntroAnimation.js
+import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
-export function MobileWelcomeAnimation() {
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true });
-	const { theme, systemTheme } = useTheme();
-	const colorMode = theme === "system" ? systemTheme : theme;
-	const darkThemeColor = colorMode === "dark";
-	
-	const [activeText, setActiveText] = useState(0);
-	
-	const rotatingTexts = [
-		"React Developer",
-		"Next.js Expert", 
-		"FastAPI Specialist",
-		"Full Stack Engineer"
-	];
-	
-	useEffect(() => {
-		if (!isInView) return;
-		const interval = setInterval(() => {
-			setActiveText(prev => (prev + 1) % rotatingTexts.length);
-		}, 2500);
-		return () => clearInterval(interval);
-	}, [isInView]);
+export function WelcomeAnimation() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const { theme, systemTheme } = useTheme();
+    const colorMode = theme === "system" ? systemTheme : theme;
+    const darkThemeColor = colorMode === "dark";
 
-	return (
-		<div
-			ref={ref}
-			className="relative w-full min-h-screen flex items-center justify-center px-4 py-12 overflow-hidden"
-			style={{
-				transform: isInView ? "none" : "translateY(30px)",
-				opacity: isInView ? 1 : 0,
-				transition: "all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s"
-			}}
-		>
-			{/* Professional Blue Gradient Background */}
-			<div className="absolute inset-0 z-0">
-				{/* Main Blue Gradient */}
-				<div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 dark:from-blue-900 dark:via-blue-950 dark:to-indigo-950"></div>
-				
-				{/* Subtle Pattern Overlay */}
-				<div className="absolute inset-0 opacity-5">
-					<svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-						<defs>
-							<pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
-								<circle cx="2" cy="2" r="1.5" fill="white" />
-							</pattern>
-						</defs>
-						<rect width="100" height="100" fill="url(#dots)" />
-					</svg>
-				</div>
-				
-				{/* Subtle Light Effects */}
-				<div className="absolute top-0 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
-				<div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"></div>
-			</div>
+    return (
+        <div
+            ref={ref}
+            className="relative w-[70%] sm:w-[65%] lg:w-[80%] xl:w-[70%] aspect-square flex items-center justify-center"
+        >
+            {/* Decorative Blue Rings - Adopted to Dark Mode with Neon Glow */}
+            <div className={`absolute w-[95%] h-[95%] rounded-full border-[3px] sm:border-[4px] border-dashed animate-[spin_25s_linear_infinite] ${darkThemeColor ? "border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.3)]" : "border-white/20"}`}></div>
+            <div className={`absolute w-[85%] h-[85%] rounded-full border-2 animate-[spin_20s_linear_infinite_reverse] ${darkThemeColor ? "border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.2)]" : "border-white/10"}`}></div>
+            
+            {/* Background Glow */}
+            <div className={`absolute w-[70%] h-[70%] rounded-full blur-3xl ${darkThemeColor ? "bg-blue-600/40 animate-pulse" : "bg-blue-400/20"}`} style={!darkThemeColor ? {} : {animationDuration: '3s'}}></div>
 
-			{/* Main Content Container */}
-			<div className="relative z-10 w-full max-w-md mx-auto">
-				{/* Profile Image Section */}
-				<div className="flex justify-center mb-8">
-					<div className="relative">
-						{/* Outer Rings */}
-						<div className="absolute -inset-3 rounded-full bg-white/10 blur-xl"></div>
-						<div className="absolute -inset-2 rounded-full border-2 border-white/20"></div>
-						<div className="absolute -inset-4 rounded-full border border-white/10"></div>
-						
-						{/* Image Container */}
-						<div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-4 ring-white/30 shadow-2xl">
-							<Image
-								src="/proflioprofile.png"
-								alt="Srinivasan Saravanan"
-								fill
-								priority
-								className="object-cover"
-								sizes="160px"
-							/>
-						</div>
-					</div>
-				</div>
+            {/* Extra Large Professional Image Container */}
+            <div className="relative w-[80%] h-[80%] sm:w-[75%] sm:h-[75%] lg:w-[80%] lg:h-[80%] group z-10">
+                
+                {/* Outer Border Wrapper - Glassmorphism in dark mode */}
+                <div className={`relative w-full h-full rounded-full p-1.5 sm:p-2 lg:p-3 shadow-2xl border ${darkThemeColor ? "bg-slate-800/80 backdrop-blur-sm shadow-blue-500/10 border-slate-700" : "bg-white/90 border-gray-200"}`}>
+                    <div className={`relative w-full h-full rounded-full overflow-hidden border-2 sm:border-4 ${darkThemeColor ? "border-blue-500/80 shadow-[inset_0_0_20px_rgba(59,130,246,0.5)]" : "border-blue-600"}`}>
+                        <Image
+                            src="/proflioprofile.png"
+                            alt="Srinivasan Saravanan"
+                            fill
+                            priority
+                            sizes="(max-width: 640px) 200px, (max-width: 1024px) 300px, 450px"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        {/* Subtle inner shadow overlay for depth */}
+                        <div className="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]"></div>
+                        
+                        {/* Dark Mode Only: AI Scanline overlay */}
+                        {darkThemeColor && (
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-b from-transparent via-blue-500/10 to-transparent animate-[scanline_3s_ease-in-out_infinite] pointer-events-none"></div>
+                        )}
+                    </div>
+                </div>
 
-				{/* Name and Title Section */}
-				<div className="text-center space-y-4 mb-8">
-					{/* Greeting Badge */}
-					<div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-						<div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-						<span className="text-white/90 text-sm font-medium">Welcome to my portfolio</span>
-					</div>
-					
-					{/* Name */}
-					<h1 className="text-3xl md:text-4xl font-bold text-white">
-						Srinivasan Saravanan
-					</h1>
-					
-					{/* Rotating Role Text */}
-					<div className="h-12">
-						<p className="text-xl md:text-2xl text-blue-200 font-semibold">
-							{rotatingTexts[activeText]}
-						</p>
-					</div>
-					
-					{/* Description */}
-					<p className="text-blue-100/80 text-base leading-relaxed max-w-sm mx-auto">
-						Building scalable web applications with modern technologies and best practices
-					</p>
-				</div>
+                {/* Professional Floating Badge - Dark mode adopted */}
+                <div className={`absolute -bottom-3 sm:-bottom-4 left-1/2 transform -translate-x-1/2 px-3 sm:px-5 py-1 sm:py-1.5 rounded-full shadow-2xl border-2 whitespace-nowrap z-30 text-white text-[10px] sm:text-xs font-bold ${darkThemeColor ? "bg-slate-800 shadow-black/50 border-slate-600" : "bg-blue-800 border-white"}`}>
+                    <div className="flex items-center gap-1 sm:gap-1.5">
+                        <svg className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        Software Developer
+                    </div>
+                </div>
+            </div>
 
-				{/* Stats Section */}
-				<div className="grid grid-cols-3 gap-3 mb-8">
-					{[
-						{ value: "2+", label: "Years", icon: "🎯" },
-						{ value: "20+", label: "Projects", icon: "🚀" },
-						{ value: "10+", label: "Techs", icon: "💻" }
-					].map((stat, index) => (
-						<div
-							key={index}
-							className="bg-white/10 backdrop-blur-sm rounded-2xl p-3 text-center border border-white/10"
-						>
-							<div className="text-2xl font-bold text-white">{stat.value}</div>
-							<div className="text-xs text-blue-200 mt-1">{stat.label}</div>
-						</div>
-					))}
-				</div>
-
-				{/* CTA Buttons */}
-				<div className="flex gap-3 justify-center">
-					<button className="px-6 py-2.5 bg-white text-blue-700 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-						View Projects
-					</button>
-					<button className="px-6 py-2.5 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold border border-white/20 hover:bg-white/20 transition-all duration-300">
-						Resume
-					</button>
-				</div>
-			</div>
-		</div>
-	);
+            {/* CSS for Scanline Animation */}
+            <style jsx>{`
+                @keyframes scanline {
+                    0%, 100% { transform: translateY(-100%); }
+                    50% { transform: translateY(100%); }
+                }
+            `}</style>
+        </div>
+    );
 }

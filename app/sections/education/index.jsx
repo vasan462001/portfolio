@@ -14,13 +14,11 @@
                     id="education"
                     className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20"
                 >
-                    <HeadingDivider title="Education" />
 
                     <div
                         ref={sectionRef}
                         className="mt-12 flex flex-col lg:flex-row gap-10 items-center"
                     >
-                        {/* IMAGE */}
                         {/* IMAGE */}
                         <div
                             style={{
@@ -29,15 +27,16 @@
                                 transition: "all 0.9s cubic-bezier(0.4,0,0.2,1)",
                             }}
                             className="relative w-full lg:w-1/2 
-    aspect-[16/10] sm:aspect-[16/9] 
-    rounded-3xl overflow-hidden shadow-2xl bg-black/5 dark:bg-white/5 group"
+                            aspect-[16/10] sm:aspect-[16/9] 
+                            rounded-3xl overflow-hidden shadow-2xl bg-black/5 dark:bg-white/5 group"
                         >
                             <Image
                                 src="/education.jpg"
                                 alt="College Campus"
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                                 priority
-                                className="object-contain transition-transform duration-700 group-hover:scale-105"
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
                             />
 
                             {/* Optional soft overlay (won't hide image) */}
@@ -64,35 +63,31 @@
                             className="w-full lg:w-1/2 space-y-8"
                         >
                             {/* Degree */}
-                            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 
-                rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700">
+                            <div className="bg-gradient-to-br from-white to-blue-50/40 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 border-l-4 border-l-blue-500 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
                                 <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-2">
                                     <FaGraduationCap />
-                                    <h3 className="font-semibold text-lg">
-                                        B.Sc– Information Technology
+                                    <h3 className="font-semibold text-lg text-gray-800 dark:text-white">
+                                        B.Sc – Information Technology
                                     </h3>
                                 </div>
 
-                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                                    2018 – 201
+                                <p className="text-sm text-gray-500 dark:text-gray-400">
+                                    2018 – 2021
                                 </p>
                             </div>
 
                             {/* School */}
-                            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 
-                rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700">
+                            <div className="bg-gradient-to-br from-white to-blue-50/40 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 border-l-4 border-l-blue-500 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300">
                                 <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-2">
                                     <FaGraduationCap />
-                                    <h3 className="font-semibold text-lg">
-                                        MCA - Computer Application
+                                    <h3 className="font-semibold text-lg text-gray-800 dark:text-white">
+                                        MCA – Computer Application
                                     </h3>
                                 </div>
 
-                                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                <p className="text-sm text-gray-500 dark:text-gray-400">
                                     2021 – 2023
                                 </p>
-
-
                             </div>
                         </div>
                     </div>
