@@ -21,85 +21,25 @@ import { TbBrandHeadlessui, TbBrandNextjs, TbBrandTailwind } from "react-icons/t
 
 export const TECHNOLOGIES = [
   {
-
     items: [
-      { 
-        name: "HTML", 
-        icon: <AiFillHtml5 size={50} className="text-orange-500 dark:text-orange-500" /> 
-      },
-      { 
-        name: "CSS", 
-        icon: <DiCss3 size={50} className="text-blue-500 dark:text-blue-500" /> 
-      },
-      { 
-        name: "JavaScript", 
-        icon: <IoLogoJavascript size={50} className="text-yellow-500 dark:text-yellow-500" /> 
-      },
-	    { 
-        name: "TypeScript", 
-        icon: <SiTypescript size={50} className="text-yellow-500 dark:text-yellow-500" /> 
-      },
-      { 
-        name: "Python", 
-        icon: <FaPython size={50}  /> 
-      },
-      { 
-        name: "React", 
-        icon: <FaReact size={50} className="text-cyan-500 dark:text-cyan-500" /> 
-      },
-      { 
-        name: "Next.js", 
-        icon: <TbBrandNextjs size={50} className="text-gray-800 dark:text-gray-200" /> 
-      },
-      { 
-        name: "FastAPI", 
-        icon: <SiFastapi size={50} className="text-teal-500 dark:text-teal-500" /> 
-      },
-      { 
-        name: "Tailwind CSS", 
-        icon: <TbBrandTailwind size={50} className="text-teal-500 dark:text-teal-500" /> 
-      },
-      { 
-        name: "Material UI", 
-        icon: <SiMui size={50} className="text-blue-500 dark:text-blue-500" /> 
-      },
-      { 
-        name: "Bootstrap", 
-        icon: <BsBootstrap size={50} className="text-purple-600 dark:text-purple-500" /> 
-      },
-      { 
-        name: "Styled Components", 
-        icon: <SiStyledcomponents size={50} className="text-pink-500 dark:text-pink-500" /> 
-      },
-	     { 
-        name: "MongoDB", 
-        icon: <SiMongodb size={50} className="text-green-500 dark:text-green-500" /> 
-      },
-      { 
-        name: "MySQL", 
-        icon: <SiMysql size={50}  /> 
-      },
- 
-      { 
-        name: "GitHub", 
-        icon: <AiFillGithub size={50} className="text-gray-800 dark:text-gray-200" /> 
-      },
-    
-      { 
-        name: "VS Code", 
-        icon: <DiVisualstudio size={50} className="text-blue-500 dark:text-blue-500" /> 
-      },
-      { 
-        name: "Android Studio", 
-        icon: <SiAndroidstudio size={50} className="text-green-500 dark:text-green-500" /> 
-      },
- 
-      { 
-        name: "Jira", 
-        icon: <SiJira size={50} className="text-blue-500 dark:text-blue-500" /> 
-      }
-  
+      { name: "HTML", icon: <AiFillHtml5 className="text-white-500" /> },
+      { name: "CSS", icon: <DiCss3 className="text-white-500" /> },
+      { name: "JavaScript", icon: <IoLogoJavascript className="text-white-500" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-white-600" /> }, // Made slightly darker blue to stand out in dark mode
+      { name: "Python", icon: <FaPython className="text-white-500 dark" /> }, // Python is officially blue/yellow, added dark mode yellow
+      { name: "React", icon: <FaReact className="text-white-500" /> },
+      { name: "Next.js", icon: <TbBrandNextjs className="text-white-500" /> }, // Pure black/white looks best for Next.js
+      { name: "FastAPI", icon: <SiFastapi className="text-white-500" /> },
+      { name: "Tailwind CSS", icon: <TbBrandTailwind className="text-white-500" /> },
+      { name: "Material UI", icon: <SiMui className="text-white-500" /> },
+      { name: "Bootstrap", icon: <BsBootstrap className="text-white-600" /> },
+      { name: "Styled Components", icon: <SiStyledcomponents className="text-white-500" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-white-500" /> },
+      { name: "MySQL", icon: <SiMysql className="text-white-500" /> }, // Added blue class since you removed it before
+      { name: "GitHub", icon: <AiFillGithub className="text-gray-800 dark:text-white" /> }, // Pure white looks best in dark mode
+      { name: "VS Code", icon: <DiVisualstudio className="text-white-500" /> },
+      { name: "Android Studio", icon: <SiAndroidstudio className="text-white-500" /> },
+      { name: "Jira", icon: <SiJira className="text-white-500" /> }
     ]
   },
-
 ];

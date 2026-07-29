@@ -52,9 +52,13 @@ export function TechnologiesSection() {
                           >
                             {/* Icon Container */}
                             <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-2xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 mb-3">
-                              <div className="text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-200 [&>svg]:w-8 [&>svg]:h-8 sm:[&>svg]:w-10 sm:[&>svg]:h-10">
+                              
+                              {/* Container handles sizing and hover scaling uniformly. 
+                                  Icons inherit colors from the constants file above. */}
+                              <div className="[&>svg]:w-8 [&>svg]:h-8 sm:[&>svg]:w-10 sm:[&>svg]:h-10 transition-transform duration-300 group-hover:scale-110">
                                 {item.icon}
                               </div>
+
                             </div>
                             
                             {/* Label */}

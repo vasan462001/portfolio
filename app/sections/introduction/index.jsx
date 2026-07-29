@@ -40,9 +40,8 @@ export function WelcomeSection() {
             <div className="w-screen left-1/2 -translate-x-1/2 relative overflow-hidden">
                 <section 
                     id="intro" 
-                    className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 dark:from-slate-900 dark:via-blue-950 dark:to-black flex items-center transition-colors duration-500" 
                     ref={introRef}
-                    style={{ minHeight: '100vh' }} // Keeps standard viewport height but allows shrinking if needed
+                    className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 dark:from-slate-900 dark:via-blue-950 dark:to-black flex items-center transition-colors duration-500 min-h-auto lg:min-h-screen"
                 >
                     {/* AI Video-style Animated Background */}
                     <div className="absolute inset-0 z-0">
@@ -77,10 +76,10 @@ export function WelcomeSection() {
                         }
                     `}</style>
 
-                    {/* Inner Container - Reduced Vertical Padding */}
-                    <div className="relative z-10 w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-4 items-center px-4 sm:px-6 py-8 lg:py-12 lg:px-8 xl:px-12">
+                    {/* Inner Container - Reduced Vertical Padding on Mobile */}
+                    <div className="relative z-10 w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-4 items-center px-4 sm:px-6 py-6 sm:py-8 lg:py-12 lg:px-8 xl:px-12">
                         
-                        {/* LEFT: Text Content - Reduced Margins */}
+                        {/* LEFT: Text Content */}
                         <div className="order-2 lg:order-1 w-full">
                             <h1
                                 tabIndex="0"
@@ -146,38 +145,11 @@ export function WelcomeSection() {
                                 Stick around to see some of my work.
                             </p>
                             
-                            <div
-                                ref={ref}
-                                style={{
-                                    transform: isInView ? "none" : "translateY(50px)",
-                                    opacity: isInView ? 1 : 0,
-                                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-                                }}
-                                className="flex gap-3 flex-wrap"
-                            >
-                                <Link
-                                    href="#projects"
-                                    onClick={onClick}
-                                    tabIndex="0"
-                                    className="btn bg-white dark:bg-blue-600 text-blue-700 dark:text-white border-0 dark:border dark:border-blue-500 hover:bg-gray-100 dark:hover:bg-blue-700 shadow-lg dark:shadow-blue-500/20 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/50 dark:focus-visible:ring-blue-300/50 text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5"
-                                    aria-label="Latest projects"
-                                >
-                                    See my latest projects
-                                </Link>
-                                <Link
-                                    href="/resume.pdf" 
-                                    tabIndex="0"
-                                    className="btn bg-transparent text-white border-2 border-white dark:border-gray-500 hover:bg-white/10 dark:hover:bg-white/5 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40 text-xs sm:text-sm px-4 py-2 sm:px-5 sm:py-2.5"
-                                    aria-label="Download Resume"
-                                >
-                                    Resume
-                                </Link>
-                            </div>
                         </div>
 
-                        {/* RIGHT: Image Section - Reduced Height */}
+                        {/* RIGHT: Image Section */}
                         <div 
-                            className="order-1 lg:order-2 w-full h-[240px] sm:h-[300px] lg:h-auto lg:min-h-[400px] xl:min-h-[500px] flex items-center justify-center"
+                            className="order-1 lg:order-2 w-full min-h-[220px] sm:min-h-[260px] lg:h-auto lg:min-h-[400px] xl:min-h-[500px] flex items-end lg:items-center justify-center pb-2 lg:pb-0"
                             style={{
                                 transform: isInView ? "none" : "scale(0.9)",
                                 opacity: isInView ? 1 : 0,
